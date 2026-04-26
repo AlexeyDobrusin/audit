@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод ZMS</title>
+    <link rel="icon" href="assets/icons/crosshair.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103707469', 'ym');
+    ym(103707469, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103707469" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <img src="assets/icons/crosshair.svg" alt="" class="logo-icon-img" width="28" height="28">
+                    <span class="logo-text">MetodZMS</span>
+                </a>
+                <div class="nav-links">
+                </div>
+            </div>
+            <div class="nav-right">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <p class="hero-supra">Собственникам бизнеса <span class="supra-gray">с оборотом до 10 млн ₽</span></p>
+                <h1 class="hero-title"><span class="highlight-lime">Инженерный</span> аудит маркетинга</h1>
+                <p class="hero-subtitle">Новый подход для решения проблем с трафиком и продажами. <span style="font-weight: 700; color: rgba(26, 26, 46, 0.75);">За 1 час узнайте, что делать, чтобы точно росла выручка</span><span class="subtitle-icon"><img src="assets/icons/sparkles.svg" alt=""></span>Соберём маркетинг в понятную систему и уйдёте с планом действий на ближайшие месяцы.</p>
+                <div class="hero-descriptor-inline variant-stripe">
+                    <p class="hero-descriptor-line">
+                        <img src="assets/icons/user-x.svg" alt="" class="descriptor-icon" width="28" height="28">
+                        <span>Работали с маркетологами, но <span class="highlight-accent">не взлетело?</span> Поймёте почему — и что делать, чтобы заработало.</span>
+                    </p>
+                    <p class="hero-descriptor-line">
+                        <img src="assets/icons/chart-column-increasing.svg" alt="" class="descriptor-icon" width="28" height="28">
+                        <span>Сверите гипотезы с практикой <span class="highlight-accent">300+ бизнесов</span> — поймёте, что сработает, а что сольёт деньги.</span>
+                    </p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#finalSection" class="btn-primary scroll-to-final">
+                        <img src="assets/icons/calendar-check.svg" alt="" class="btn-icon btn-icon-white" width="20" height="20">
+                        <span>Записаться на аудит</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-photo-block">
+                    <img src="assets/images/ad_z.jpg" alt="Алексей Добрусин" class="hero-photo">
+                    <div class="hero-photo-gradient"></div>
+                    <div class="hero-play-button" id="heroPlayButton">
+                        <img src="assets/icons/youtube-logo-fill.svg" alt="Воспроизвести">
+                    </div>
+                    <div class="hero-photo-overlay">
+                        <div class="hero-photo-header">
+                            <div class="hero-pulse-dot">
+                                <div class="hero-pulse-wave"></div>
+                                <div class="hero-pulse-wave hero-pulse-wave-delayed"></div>
+                            </div>
+                            <span class="hero-photo-name">Алексей Добрусин</span>
+                        </div>
+                        <p class="hero-photo-desc">Автор инженерного подхода, к.э.н., 16 лет в маркетинге. Подход проверен в микрокомпаниях из 47 ниш — средний рост выручки 40% за 5 месяцев.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Documents -->
+    <section class="steps-section">
+        <div class="steps-container">
+            <div class="steps-header">
+                <div class="steps-header-left">
+                    <h2 class="steps-title">Заберёте план,<br>схему и смету<br>в <span class="highlight-lime">документах</span></h2>
+                </div>
+            </div>
+            <div class="steps-layout steps-layout-v2">
+                <div class="steps-grid steps-grid-docs-v2">
+                    <!-- Card 1 -->
+                    <div class="step-card">
+                        <div class="step-card-corner step-card-corner-tl"></div>
+                        <div class="step-card-corner step-card-corner-tr"></div>
+                        <div class="step-card-corner step-card-corner-bl"></div>
+                        <div class="step-card-corner step-card-corner-br"></div>
+                        <div class="step-card-header">
+
+                            <div class="step-number-wrap">
+                                <span class="step-number">01</span>
+                                <span class="step-dots">
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot"></span>
+                                    <span class="step-dot"></span>
+                                    <span class="step-dot"></span>
+                                    <span class="step-dot"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="step-card-text"><strong>Схема вашего маркетинга</strong></p>
+                        <p class="step-card-desc">Google-таблица, где видно все ключевые блоки. Сразу понятно, что работает, что тормозит рост и где чинить.</p>
+                        <div class="step-card-image-docs">
+                            <img src="assets/images/karta.jpg" alt="Схема маркетинга">
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="step-card">
+                        <div class="step-card-corner step-card-corner-tl"></div>
+                        <div class="step-card-corner step-card-corner-tr"></div>
+                        <div class="step-card-corner step-card-corner-bl"></div>
+                        <div class="step-card-corner step-card-corner-br"></div>
+                        <div class="step-card-header">
+
+                            <div class="step-number-wrap">
+                                <span class="step-number">02</span>
+                                <span class="step-dots">
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot"></span>
+                                    <span class="step-dot"></span>
+                                    <span class="step-dot"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="step-card-text"><strong>Список действий</strong></p>
+                        <p class="step-card-desc">Excel-файл: что делать и в каком порядке. Конкретные шаги на ближайший месяц.</p>
+                        <div class="step-card-image-docs">
+                            <img src="assets/images/rekomend.jpg" alt="Список действий">
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="step-card">
+                        <div class="step-card-corner step-card-corner-tl"></div>
+                        <div class="step-card-corner step-card-corner-tr"></div>
+                        <div class="step-card-corner step-card-corner-bl"></div>
+                        <div class="step-card-corner step-card-corner-br"></div>
+                        <div class="step-card-header">
+
+                            <div class="step-number-wrap">
+                                <span class="step-number">03</span>
+                                <span class="step-dots">
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot"></span>
+                                    <span class="step-dot"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="step-card-text"><strong>Рекомендации по найму</strong></p>
+                        <p class="step-card-desc">Кто нужен сейчас, кто позже. Подрядчики или штатные — под вашу ситуацию и бюджет.</p>
+                        <div class="step-card-image-docs">
+                            <img src="assets/images/komanda.jpg" alt="Рекомендации по найму">
+                        </div>
+                    </div>
+                    <!-- Card 4 (wide - spans 1.5 cols) -->
+                    <div class="step-card step-card-wide-v2">
+                        <div class="step-card-corner step-card-corner-tl"></div>
+                        <div class="step-card-corner step-card-corner-tr"></div>
+                        <div class="step-card-corner step-card-corner-bl"></div>
+                        <div class="step-card-corner step-card-corner-br"></div>
+                        <div class="step-card-header">
+
+                            <div class="step-number-wrap">
+                                <span class="step-number">04</span>
+                                <span class="step-dots">
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="step-card-text"><strong>Смета на 3 месяца</strong></p>
+                        <p class="step-card-desc">Цифры: зарплаты, рекламный бюджет, прочие затраты. Конкретно под ваш бизнес.</p>
+                        <div class="step-card-image-docs">
+                            <img src="assets/images/smeta.jpg" alt="Смета на 3 месяца">
+                        </div>
+                    </div>
+                    <!-- Card 5 (wide - spans 1.5 cols) -->
+                    <div class="step-card step-card-wide-v2">
+                        <div class="step-card-corner step-card-corner-tl"></div>
+                        <div class="step-card-corner step-card-corner-tr"></div>
+                        <div class="step-card-corner step-card-corner-bl"></div>
+                        <div class="step-card-corner step-card-corner-br"></div>
+                        <div class="step-card-header">
+
+                            <div class="step-number-wrap">
+                                <span class="step-number">05</span>
+                                <span class="step-dots">
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                    <span class="step-dot active"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="step-card-text"><strong>Методический материал</strong></p>
+                        <p class="step-card-desc">Инструкции, чек-листы, таблицы — чтобы внедрить самостоятельно. Выберете один документ под тот блок, который у вас просажен сильнее всего.</p>
+                        <div class="step-card-image-docs">
+                            <img src="assets/images/materials.jpg" alt="Методический материал">
+                        </div>
+                    </div>
+                </div>
+                <div class="steps-review">
+                    <div class="review-card review-card-light review-card-accent">
+                        <div class="review-quote-icon">
+                            <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                        </div>
+                        <img src="assets/images/o_7.png" alt="Отзыв" class="review-image">
+                    </div>
+                    <a href="#finalSection" class="btn-primary scroll-to-final">
+                        <img src="assets/icons/calendar-check.svg" alt="" class="btn-icon btn-icon-white" width="22" height="22">
+                        <span>Записаться на аудит</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Author Quote -->
+    <section class="author-quote-section">
+        <div class="author-quote-container">
+            <div class="author-quote-left">
+                <div class="author-avatar">
+                    <img src="assets/images/AD_1.jpg" alt="Алексей Добрусин">
+                </div>
+                <div class="author-info">
+                    <p class="author-name">Алексей Добрусин</p>
+                    <p class="author-role">Автор аудита</p>
+                </div>
+            </div>
+            <div class="author-quote-right">
+                <div class="quote-mark">
+                    <img src="assets/icons/quote-tabler.svg?v=4" alt="" width="115" height="72">
+                </div>
+                <div class="quote-text-content">
+                    <h2 class="author-quote-heading">Вам нет смысла читать дальше, если вас всё устраивает. Если хватает заявок, продажи стабильны, выручка растёт каждый месяц, и вы точно знаете, что делать дальше — даже в кризис.</h2>
+                    <p class="author-quote-text"><span style="font-weight: 600; color: #1a1a2e;">Это не консультация и не бизнес-разбор.</span> Не будет абстрактных советов и гениальных идей. Посмотрим на ваш маркетинг как инженеры: проверим ключевые узлы, найдём, где ломается, и соберём последовательность действий под ваш бизнес.</p>
+                    <p class="author-quote-final"><span style="font-weight: 600; color: #1a1a2e;">Аудит разработан под микробизнес.</span> Рекомендации учитывают вашу реальность: ограниченный бюджет, отсутствие команды, нехватку времени и то, что вы не маркетолог. Без советов «наймите отдел маркетинга» или «увеличьте бюджет в&nbsp;5&nbsp;раз».</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Desires (For whom) -->
+    <section class="steps-section">
+        <div class="steps-container">
+            <div class="steps-header">
+                <div class="steps-header-left">
+                    <h2 class="steps-title">4 <span class="highlight-lime">профита</span> аудита</h2>
+                </div>
+            </div>
+            <div class="steps-grid steps-grid-4">
+                <!-- Card 1 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <img src="assets/icons/clock.svg" alt="" class="step-card-icon">
+                    </div>
+                    <p class="step-card-text"><strong>Экономия времени</strong></p>
+                    <p class="step-card-desc">За час получите концентрат 16&nbsp;лет опыта маркетолога-практика — и&nbsp;через призму этого опыта увидите решения, которые дадут рост выручки.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <img src="assets/icons/shield-check.svg" alt="" class="step-card-icon">
+                    </div>
+                    <p class="step-card-text"><strong>Страховка от потерь</strong></p>
+                    <p class="step-card-desc">Узнаете, какие решения и&nbsp;действия принесут деньги, а&nbsp;какие их&nbsp;сольют. Получите только то, что можно применить уже завтра.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <img src="assets/icons/compass.svg" alt="" class="step-card-icon">
+                    </div>
+                    <p class="step-card-text"><strong>Свобода от рутины</strong></p>
+                    <p class="step-card-desc">Узнаете, как расти руками команды. Открываете файл — видите, что важно делать, а&nbsp;что можно выбросить из&nbsp;календаря.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <img src="assets/icons/message-circle.svg" alt="" class="step-card-icon">
+                    </div>
+                    <p class="step-card-text"><strong>Личная поддержка</strong></p>
+                    <p class="step-card-desc">В&nbsp;течение 7&nbsp;дней после аудита Алексей Добрусин лично ответит на&nbsp;вопросы и&nbsp;даст обратную связь по&nbsp;вашим решениям — чтобы вы&nbsp;точно внедрили то, что получили.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Diagnostic Toggles -->
+    <section class="diag-section">
+        <!-- Title above everything -->
+        <div class="diag-header">
+            <h2 class="diag-title">Что из этого<br><span class="highlight-lime nowrap">про вас</span></h2>
+        </div>
+
+        <p class="diag-subtitle-mobile">Нажмите на карточку, если утверждение описывает вашу ситуацию</p>
+
+        <div class="diag-container">
+            <!-- Sidebar column (desktop only) -->
+            <div class="diag-sidebar-col">
+                <div class="diag-sidebar-scroll">
+                    <div class="diag-sidebar">
+                        <p class="diag-subtitle">Нажмите на карточку, если утверждение описывает вашу ситуацию</p>
+                        <div class="diag-counter" id="diagCounterDesktop">
+                            <div class="diag-dots" id="diagDotsDesktop"></div>
+                            <div class="diag-count"><span class="diag-count-num" id="diagCountNumDesktop">0</span><span class="diag-count-total"> / 9</span></div>
+                            <p class="diag-status" id="diagStatusDesktop">Пока ничего не выбрано</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="diag-note">Если есть хотя бы одна чёрная карточка, значит, есть что чинить. Инженерный аудит покажет&nbsp;— где именно и&nbsp;что делать.</p>
+                <a href="#finalSection" class="btn-primary diag-btn scroll-to-final">Записаться на аудит</a>
+            </div>
+
+            <!-- Cards grid: 2 staggered columns -->
+            <div class="diag-cards">
+                <div class="diag-col diag-col-left" id="diagColLeft"></div>
+                <div class="diag-col diag-col-right" id="diagColRight"></div>
+            </div>
+        </div>
+
+        <!-- Mobile counter (below cards, full width) -->
+        <div class="diag-counter diag-counter-mobile" id="diagCounterMobile">
+            <div class="diag-dots" id="diagDotsMobile"></div>
+            <div class="diag-count"><span class="diag-count-num" id="diagCountNumMobile">0</span><span class="diag-count-total"> / 9</span></div>
+            <p class="diag-status" id="diagStatusMobile">Пока ничего не выбрано</p>
+        </div>
+        <p class="diag-note diag-note-mobile">Если есть хотя бы одна чёрная карточка, значит, есть что чинить. Инженерный аудит покажет&nbsp;— где именно и&nbsp;что делать.</p>
+        <a href="#finalSection" class="btn-primary diag-btn diag-btn-mobile scroll-to-final">Записаться на аудит</a>
+    </section>
+
+    <!-- Section 5: Showcase -->
+    <section class="showcase-section">
+        <div class="showcase-container">
+            <h2 class="showcase-title">Почему просто<br>запустить <span class="highlight-lime">рекламу</span><br>не работает?</h2>
+            <div class="showcase-grid">
+                <!-- Card 1: только текст (без карточки) -->
+                <div class="showcase-text-block">
+                    <h3 class="showcase-card-heading">Так делают 97 из 100 микробизнесов</h3>
+                    <p class="showcase-card-text">Берут 1–2 инструмента из кучи: таргет, сайт, рассылка. Не сработало — берут следующие. Так можно годами перебирать инструменты и сливать бюджет. Это лоскутный маркетинг — куски, вырванные из контекста. Это как пробовать читать, используя всего 5 букв. Нужно же знать весь алфавит.</p>
+                    <p class="showcase-card-text" style="margin-top: 16px; color: #1a1a2e; font-weight: 600;">Если в часах не хватает одной шестерёнки — часы встают. Выглядят как часы, но время не показывают. Большинство курсов и маркетологов продают вам отдельные буквы и шестерёнки. Россыпь частей механизма — это не механизм.</p>
+                </div>
+                <!-- Card 2: изображение X -->
+                <div class="showcase-card">
+                    <img src="assets/images/x.png" alt="Инструменты без системы" class="showcase-card-image">
+                </div>
+                <!-- Card 3: изображение P -->
+                <div class="showcase-card">
+                    <img src="assets/images/p.png" alt="Система инструментов" class="showcase-card-image">
+                </div>
+                <!-- Card 4: только текст (без карточки) -->
+                <div class="showcase-text-block">
+                    <h3 class="showcase-card-heading">Так делают 3 из 100, которые растут</h3>
+                    <p class="showcase-card-text">Инструменты выстроены в систему. Каждый на своём месте, в нужной последовательности. Собственник включает элементы один за другим — и маркетинг начинает работать как механизм: генерирует выручку предсказуемо, независимо от настроения и сезона.</p>
+                    <p class="showcase-card-text" style="margin-top: 16px; color: #1a1a2e; font-weight: 600;">Результат — стабильный рост выручки до 120 млн ₽ в год.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Features (Структура маркетинга) -->
+    <section class="features-section">
+        <div class="features-container">
+            <h2 class="features-title">Как выглядит маркетинг<br>при <span class="highlight-lime">инженерном</span> подходе</h2>
+            <div class="features-body">
+                <div class="features-left">
+                    <div class="steps-review">
+                        <div class="review-card review-card-light review-card-accent">
+                            <div class="review-quote-icon">
+                                <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                            </div>
+                            <img src="assets/images/o_8.png" alt="Отзыв" class="review-image">
+                        </div>
+                    </div>
+                    <p class="features-desc">Внутри каждого раздела — инструменты, выстроенные в последовательность. Всё связано: инструменты между собой, разделы между собой. Красный сигнал в одном месте — и вся система выходит из строя.</p>
+                    <a href="#finalSection" class="btn-primary scroll-to-final">
+                        <img src="assets/icons/zap.svg" alt="" class="btn-icon btn-icon-white" width="22" height="22">
+                        <span>Пройти аудит</span>
+                    </a>
+                </div>
+                <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-card-title">Стратегический маркетинг</h3>
+                    <p class="feature-card-text">На какой рынок идём, что продаём и кому?</p>
+                    <div class="feature-card-image">
+                        <img src="assets/images/ZMS_ST.jpg" alt="Стратегический маркетинг">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-card-title">Генерация лидов</h3>
+                    <p class="feature-card-text">Какие рекламные каналы подходят, как выбрать и настроить?</p>
+                    <div class="feature-card-image">
+                        <img src="assets/images/ZMS_R.jpg" alt="Генерация лидов">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-card-title">Продажи</h3>
+                    <p class="feature-card-text">Как превратить заявки в клиентов с нужной конверсией?</p>
+                    <div class="feature-card-image">
+                        <img src="assets/images/ZMS_P.jpg" alt="Продажи">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-card-title">Сервисный маркетинг</h3>
+                    <p class="feature-card-text">Как увеличить выручку за счёт работы с текущими клиентами?</p>
+                    <div class="feature-card-image">
+                        <img src="assets/images/ZMZ_S.jpg" alt="Сервисный маркетинг">
+                    </div>
+                </div>
+            </div>
+                <div class="features-bottom-mobile">
+                    <p class="features-desc">Внутри каждого раздела — инструменты, выстроенные в последовательность. Всё связано: инструменты между собой, разделы между собой. Красный сигнал в одном месте — и вся система выходит из строя.</p>
+                    <div class="steps-review">
+                        <div class="review-card review-card-light review-card-accent">
+                            <div class="review-quote-icon">
+                                <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                            </div>
+                            <img src="assets/images/o_8.png" alt="Отзыв" class="review-image">
+                        </div>
+                    </div>
+                    <a href="#finalSection" class="btn-primary scroll-to-final">
+                        <img src="assets/icons/zap.svg" alt="" class="btn-icon btn-icon-white" width="22" height="22">
+                        <span>Пройти аудит</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Bonuses (3 cards) -->
+    <section class="steps-section">
+        <div class="steps-container">
+            <div class="steps-header">
+                <div class="steps-header-left">
+                    <h2 class="steps-title">Почему аудит <span class="highlight-lime">работает</span></h2>
+                </div>
+            </div>
+            <div class="steps-grid">
+                <!-- Card 1 -->
+                <div class="step-card step-card-dark">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Шаг 01</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">01</span>
+                            <span class="step-dots">
+                                <span class="step-dot active"></span>
+                                <span class="step-dot"></span>
+                                <span class="step-dot"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>Во время аудита</strong></p>
+                    <p class="step-card-desc">Проверим важные элементы каждого из&nbsp;четырёх разделов маркетинга. Найдём, где сбой. Наметим, что делать в&nbsp;первую очередь.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/zapis_2.jpg" alt="Во время аудита">
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Шаг 02</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">02</span>
+                            <span class="step-dots">
+                                <span class="step-dot active"></span>
+                                <span class="step-dot active"></span>
+                                <span class="step-dot"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>Через 24&nbsp;часа</strong></p>
+                    <p class="step-card-desc">Получите материалы: схему, план, смету, рекомендации. Открываете&nbsp;— и&nbsp;видите, что делать.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/materials_2.png" alt="Через 24 часа">
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Шаг 03</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">03</span>
+                            <span class="step-dots">
+                                <span class="step-dot active"></span>
+                                <span class="step-dot active"></span>
+                                <span class="step-dot active"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>В&nbsp;течение недели</strong></p>
+                    <p class="step-card-desc">Начнёте внедрять&nbsp;— появятся вопросы. Задаёте&nbsp;— получаете ответ от&nbsp;Алексея лично. Так информация превращается в&nbsp;действия.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/podder.jpg" alt="В течение недели">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Author Quote 2 (Bridge to Practicum) -->
+    <section class="author-quote-section no-padding-top">
+        <div class="author-quote-container">
+            <div class="author-quote-left">
+                <div class="author-avatar">
+                    <img src="assets/images/AD_1.jpg" alt="Алексей Добрусин">
+                </div>
+                <div class="author-info">
+                    <p class="author-name">Алексей Добрусин</p>
+                    <p class="author-role">Автор аудита</p>
+                </div>
+            </div>
+            <div class="author-quote-right">
+                <div class="quote-mark">
+                    <img src="assets/icons/quote-tabler.svg?v=4" alt="" width="115" height="72">
+                </div>
+                <div class="quote-text-content">
+                    <h2 class="author-quote-heading">Через год увеличите продажи в&nbsp;2,5&nbsp;раза...</h2>
+                    <p class="author-quote-text">Такое обещание — чушь. Реально ли&nbsp;это сделать с&nbsp;тем, что получите на&nbsp;аудите? Да. Сделаете ли&nbsp;вы&nbsp;это? Не&nbsp;знаю. Всё в&nbsp;ваших руках. Я&nbsp;даю карту и&nbsp;инструменты. Идти — вам.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Получите набор решений (6 карточек) -->
+    <section class="steps-section">
+        <div class="steps-container">
+            <div class="steps-header">
+                <div class="steps-header-left">
+                    <h2 class="steps-title">Получите набор<br><span class="highlight-lime">решений</span> для<br>вашего бизнеса</h2>
+                </div>
+                <div class="steps-header-right">
+                    <a href="#finalSection" class="btn-primary scroll-to-final">
+                        <img src="assets/icons/calendar-check.svg" alt="" class="btn-icon btn-icon-white" width="20" height="20">
+                        <span>Записаться на аудит</span>
+                    </a>
+                </div>
+            </div>
+            <div class="steps-grid steps-grid-lime">
+                <!-- Card 1 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Решение 01</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">01</span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>Разбор в&nbsp;Zoom — 1&nbsp;час</strong></p>
+                    <p class="step-card-desc">За&nbsp;плечами Алексея 16&nbsp;лет практики и&nbsp;тысячи разборов бизнесов. Он&nbsp;задаст правильные вопросы, чтобы из&nbsp;100&nbsp;возможных действий вы&nbsp;смогли выбрать 3–4, которые точно дадут результат.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/zapis.jpg" alt="Разбор в Zoom">
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Решение 02</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">02</span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>Инженерная схема маркетинга</strong></p>
+                    <p class="step-card-desc">Зелёный — работает. Красный — критично, чинить сейчас. Жёлтый — зона риска. Серый — пока можно не&nbsp;трогать. Сразу видно, куда направить усилия.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/karta.jpg" alt="Инженерная схема маркетинга">
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Решение 03</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">03</span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>Тетрадь диагностики барьеров роста</strong></p>
+                    <p class="step-card-desc">8&nbsp;психологических ограничителей, которые блокируют рост в&nbsp;микробизнесе. Для каждого — как с&nbsp;ним справиться.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/tetrad.png" alt="Тетрадь диагностики барьеров роста">
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Решение 04</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">04</span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>Авторские материалы</strong></p>
+                    <p class="step-card-desc">Выберете одну критическую зону — получите инструкции, чек-листы, таблицы. Те&nbsp;же, что использует Алексей лично и&nbsp;его клиенты.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/materials.jpg" alt="Авторские материалы">
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Решение 05</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">05</span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>Недельная поддержка</strong></p>
+                    <p class="step-card-desc">Алексей лично даёт голосовые ответы и&nbsp;рекомендации по&nbsp;вашим вопросам в&nbsp;течение недели. Отдельно такая услуга стоила&nbsp;бы х3 от&nbsp;цены аудита.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/podder.jpg" alt="Недельная поддержка">
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="step-card">
+                    <div class="step-card-corner step-card-corner-tl"></div>
+                    <div class="step-card-corner step-card-corner-tr"></div>
+                    <div class="step-card-corner step-card-corner-bl"></div>
+                    <div class="step-card-corner step-card-corner-br"></div>
+                    <div class="step-card-header">
+                        <span class="step-label">// Решение 06</span>
+                        <div class="step-number-wrap">
+                            <span class="step-number">06</span>
+                        </div>
+                    </div>
+                    <p class="step-card-text"><strong>Видеозапись</strong></p>
+                    <p class="step-card-desc">Пересматривайте, показывайте команде, загрузите в&nbsp;нейросеть — чтобы не&nbsp;упустить ничего важного.</p>
+                    <div class="step-card-image">
+                        <img src="assets/images/a_d.png" alt="Видеозапись">
+                    </div>
+                </div>
+            </div>
+            <div class="steps-cta-mobile">
+                <a href="#finalSection" class="btn-primary scroll-to-final">
+                    <img src="assets/icons/calendar-check.svg" alt="" class="btn-icon btn-icon-white" width="20" height="20">
+                    <span>Записаться на аудит</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Final CTA -->
+    <section class="final-section" id="finalSection">
+        <h2 class="final-heading">Стоимость <span class="highlight-lime">аудита</span></h2>
+        <div class="final-container">
+            <div class="final-card final-card-light">
+                <div class="final-gift-icon">
+                    <img src="assets/icons/gift.svg" alt="" width="50" height="50">
+                </div>
+                <div class="final-bonus-list">
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Часовой аудит в&nbsp;Zoom</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Инженерная схема маркетинга</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">План действий на&nbsp;ближайший месяц</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Смета на&nbsp;3&nbsp;месяца</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Рекомендации по&nbsp;найму</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Авторские материалы</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Неделя поддержки от&nbsp;Алексея</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Видеозапись аудита</p>
+                    </div>
+                </div>
+            </div>
+            <div class="final-card final-card-dark">
+                <!-- Промо-бейдж (скрыт по умолчанию) -->
+                <div class="promo-badge" id="promoBadge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span id="promoBadgeText">Промокод применён</span>
+                </div>
+
+                <h2 class="final-dark-price" id="priceMain">5&nbsp;000&nbsp;₽</h2>
+                <p class="final-dark-old-price" id="priceOld"><s>15&nbsp;000&nbsp;₽</s></p>
+                <p class="final-card-text" id="priceDescription">Благодаря инженерному подходу мне удалось структурировать аудит так, что за&nbsp;1&nbsp;час вы&nbsp;получаете материалы, сравнимые по&nbsp;ценности с&nbsp;3-часовой стратегической сессией. Такая сессия у&nbsp;меня стоит 15&nbsp;000&nbsp;₽. Но&nbsp;я&nbsp;намеренно ставлю цену ниже стоимости своего часа. Хочу, чтобы цена не&nbsp;стала барьером. Чтобы вы&nbsp;легко сказали «да» и&nbsp;познакомились с&nbsp;подходом. <span style="font-weight: 600; color: #1a1a2e;">Поэтому стоимость аудита&nbsp;— 5&nbsp;000&nbsp;₽.</span> Если у&nbsp;вас есть промокод, введите его при заполнении формы, и&nbsp;стоимость станет ещё ниже.</p>
+                <a href="#" class="btn-primary final-cta" id="openFormBtn">
+                    <img src="assets/icons/zap.svg" alt="" class="btn-icon btn-icon-white" width="22" height="22">
+                    <span>Записаться на аудит</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Career (photo + text) -->
+    <section class="career-section">
+        <h2 class="career-heading">Алексей <span class="highlight-lime">Добрусин</span></h2>
+        <div class="career-container">
+            <div class="career-image">
+                <img src="assets/images/ad_z.jpg" alt="">
+                <div class="career-overlay">
+                    <div class="career-dot"></div>
+                    <span class="career-overlay-label">Автор аудита</span>
+                </div>
+            </div>
+            <div class="career-content">
+                <ul class="career-checklist">
+                    <li class="career-checklist-item">
+                        <img src="assets/icons/circle-check-lime.svg" alt="" class="career-check-icon" width="22" height="22">
+                        <span>Маркетолог-стратег, 16 лет практики</span>
+                    </li>
+                    <li class="career-checklist-item">
+                        <img src="assets/icons/circle-check-lime.svg" alt="" class="career-check-icon" width="22" height="22">
+                        <span>Кандидат экономических наук</span>
+                    </li>
+                    <li class="career-checklist-item">
+                        <img src="assets/icons/circle-check-lime.svg" alt="" class="career-check-icon" width="22" height="22">
+                        <span>Экс-директор по маркетингу в компаниях из ТОП-10 РФ</span>
+                    </li>
+                    <li class="career-checklist-item">
+                        <img src="assets/icons/circle-check-lime.svg" alt="" class="career-check-icon" width="22" height="22">
+                        <span>Автор инженерного подхода к маркетингу (метод ЗМС)</span>
+                    </li>
+                    <li class="career-checklist-item">
+                        <img src="assets/icons/circle-check-lime.svg" alt="" class="career-check-icon" width="22" height="22">
+                        <span>Трекер Сколково, эксперт Forbes</span>
+                    </li>
+                </ul>
+                <p class="career-text">Если вы&nbsp;ищете не&nbsp;таблетку, а&nbsp;хотите построить систему, которая стабильно будет приводить клиентов. Если вы&nbsp;уже много всего пробовали в&nbsp;маркетинге, но&nbsp;безрезультатно — настолько, что разочаровались. Значит пора поменять старый подход на&nbsp;инженерный. Записывайтесь на&nbsp;аудит — это первый шаг.</p>
+                <a href="#finalSection" class="btn-primary scroll-to-final">
+                    <img src="assets/icons/calendar-check.svg" alt="" class="btn-icon btn-icon-white" width="20" height="20">
+                    <span>Записаться на аудит</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Reviews -->
+    <section class="reviews-section">
+        <div class="reviews-container">
+            <div class="reviews-masonry">
+                <div class="review-card review-card-light review-card-accent">
+                    <div class="review-quote-icon">
+                        <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                    </div>
+                    <img src="assets/images/o_1.png" alt="Отзыв" class="review-image">
+                </div>
+                <div class="review-card review-card-light review-card-accent">
+                    <div class="review-quote-icon">
+                        <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                    </div>
+                    <img src="assets/images/o_2.png" alt="Отзыв" class="review-image">
+                </div>
+                <div class="review-card review-card-light review-card-accent">
+                    <div class="review-quote-icon">
+                        <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                    </div>
+                    <img src="assets/images/o_3.png" alt="Отзыв" class="review-image">
+                </div>
+                <div class="review-card review-card-light review-card-accent">
+                    <div class="review-quote-icon">
+                        <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                    </div>
+                    <img src="assets/images/o_7.png" alt="Отзыв" class="review-image">
+                </div>
+                <div class="review-card review-card-light review-card-accent">
+                    <div class="review-quote-icon">
+                        <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                    </div>
+                    <img src="assets/images/o_4.png" alt="Отзыв" class="review-image">
+                </div>
+                <div class="review-card review-card-light review-card-accent">
+                    <div class="review-quote-icon">
+                        <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                    </div>
+                    <img src="assets/images/o_5.png" alt="Отзыв" class="review-image">
+                </div>
+                <div class="review-card review-card-light review-card-accent">
+                    <div class="review-quote-icon">
+                        <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                    </div>
+                    <img src="assets/images/o_6.png" alt="Отзыв" class="review-image">
+                </div>
+                <div class="review-card review-card-light review-card-accent">
+                    <div class="review-quote-icon">
+                        <img src="assets/icons/quote-tabler.svg?v=5" alt="" width="48" height="30">
+                    </div>
+                    <img src="assets/images/o_8.png" alt="Отзыв" class="review-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Author Quote 3 (после отзывов) -->
+    <section class="author-quote-section no-padding-top">
+        <div class="author-quote-container">
+            <div class="author-quote-left">
+                <div class="author-avatar">
+                    <img src="assets/images/AD_1.jpg" alt="Алексей Добрусин">
+                </div>
+                <div class="author-info">
+                    <p class="author-name">Алексей Добрусин</p>
+                    <p class="author-role">Автор аудита</p>
+                </div>
+            </div>
+            <div class="author-quote-right">
+                <div class="quote-mark">
+                    <img src="assets/icons/quote-tabler.svg?v=4" alt="" width="115" height="72">
+                </div>
+                <div class="quote-text-content">
+                    <h2 class="author-quote-heading">Выбор за&nbsp;вами</h2>
+                    <p class="author-quote-text">Можете продолжить разбираться сами — тестировать гипотезы, искать, ошибаться. Рано или поздно получится.</p>
+                    <h2 class="author-quote-heading author-quote-heading-small" style="margin-top: 16px;">А&nbsp;можете пройти аудит — и&nbsp;сэкономить месяцы, а&nbsp;то и&nbsp;годы поисков. Получить схему, план и&nbsp;понимание, что делать, чтобы маркетинг начал приносить деньги.</h2>
+                    <a href="#finalSection" class="btn-primary scroll-to-final author-quote-cta">
+                        <img src="assets/icons/calendar-check.svg" alt="" class="btn-icon btn-icon-white" width="20" height="20">
+                        <span>Записаться на аудит</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Showcase 2 (дубль секции 5) — СКРЫТА, сохранена на будущее -->
+    <section class="showcase-section showcase-section-2" style="display: none;">
+        <div class="showcase-container">
+            <h2 class="showcase-title">В чем приемущество<br><span class="highlight-lime">инженерного</span> подхода?</h2>
+            <div class="showcase-grid">
+                <!-- Card 1: только текст (без карточки) -->
+                <div class="showcase-text-block">
+                    <h3 class="showcase-card-heading">Инструменты без системы не работают</h3>
+                    <p class="showcase-card-text">Представьте механические часы. Если внутри не хватает одной шестерёнки — часы встают. Выглядят как часы, но время не показывают. Большинство курсов и маркетологов продают вам отдельные шестерёнки: рилсы, автоворонки, скрипты. Но россыпь запчастей — это ещё не механизм.</p>
+                </div>
+                <!-- Card 2: визуальная карточка -->
+                <div class="showcase-card">
+                    <div class="showcase-card-visual showcase-visual-2">
+                        <div class="sc2-card sc2-card-left">
+                            <div class="sc2-label"></div>
+                            <div class="sc2-bars">
+                                <div class="sc2-bar" style="height:40%"></div>
+                                <div class="sc2-bar" style="height:60%"></div>
+                                <div class="sc2-bar" style="height:50%"></div>
+                            </div>
+                            <div class="sc2-card-title"></div>
+                            <div class="sc2-card-sub"></div>
+                        </div>
+                        <div class="sc2-card sc2-card-center">
+                            <div class="sc2-tabs">
+                                <div class="sc2-tab sc2-tab-active"></div>
+                                <div class="sc2-tab"></div>
+                            </div>
+                            <div class="sc2-content">
+                                <div class="sc2-globe"></div>
+                                <div class="sc2-chart-bars">
+                                    <div class="sc2-bar" style="height:30%"></div>
+                                    <div class="sc2-bar" style="height:70%"></div>
+                                    <div class="sc2-bar" style="height:50%"></div>
+                                    <div class="sc2-bar" style="height:90%"></div>
+                                </div>
+                                <div class="sc2-badge">+6</div>
+                            </div>
+                            <div class="sc2-card-title"></div>
+                            <div class="sc2-card-sub"></div>
+                        </div>
+                        <div class="sc2-card sc2-card-right">
+                            <div class="sc2-label"></div>
+                            <div class="sc2-line-chart"></div>
+                            <div class="sc2-card-title"></div>
+                            <div class="sc2-card-sub"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3: визуальная карточка -->
+                <div class="showcase-card">
+                    <div class="showcase-card-visual showcase-visual-3">
+                        <div class="sc3-left">
+                            <div class="sc3-panel sc3-panel-bars">
+                                <div class="sc3-mini-bars">
+                                    <div class="sc3-mbar" style="height:20%"></div>
+                                    <div class="sc3-mbar" style="height:30%"></div>
+                                    <div class="sc3-mbar" style="height:25%"></div>
+                                    <div class="sc3-mbar" style="height:40%"></div>
+                                    <div class="sc3-mbar" style="height:55%"></div>
+                                    <div class="sc3-mbar" style="height:70%"></div>
+                                    <div class="sc3-mbar" style="height:65%"></div>
+                                    <div class="sc3-mbar" style="height:80%"></div>
+                                    <div class="sc3-mbar" style="height:90%"></div>
+                                    <div class="sc3-mbar" style="height:85%"></div>
+                                </div>
+                                <div class="sc3-axis-labels">
+                                    <span>Q1</span><span>Q3</span><span>Q4</span><span>Q1</span><span>Q2</span>
+                                </div>
+                            </div>
+                            <div class="sc3-panel sc3-panel-line">
+                                <div class="sc3-line-area"></div>
+                                <div class="sc3-axis-labels">
+                                    <span>May</span><span>June</span><span>July</span><span>August</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sc3-right">
+                            <div class="sc3-add-panel">
+                                <div class="sc3-add-label">Add chart</div>
+                                <div class="sc3-add-icon">+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4: только текст (без карточки) -->
+                <div class="showcase-text-block">
+                    <h3 class="showcase-card-heading">Инженерный подход — это сборка механизма</h3>
+                    <p class="showcase-card-text">Мы выстраиваем инструменты в правильной последовательности, чтобы они работали вместе. Не набор запчастей, а механизм, который генерирует выручку — предсказуемо, независимо от вашего настроения и сезона.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <a href="#" class="logo footer-logo">
+                <img src="assets/icons/crosshair.svg" alt="" class="footer-icon" width="22" height="22">
+                <span class="footer-logo-text">MetodZMS</span>
+            </a>
+            <div class="footer-links">
+                <a href="/privacy" class="footer-link" target="_blank">Политика конфиденциальности</a>
+                <span class="footer-divider">·</span>
+                <a href="/offer" class="footer-link" target="_blank">Оферта</a>
+            </div>
+            <p class="footer-copyright">© 2025 Алексей Добрусин</p>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-overlay"></div>
+        <div class="video-modal-container">
+            <button class="video-modal-close" id="videoModalClose">
+                <img src="assets/icons/x.svg" alt="Закрыть" width="24" height="24">
+            </button>
+            <div class="video-modal-player">
+                <img src="assets/images/ad_z.jpg" alt="Превью видео" class="video-placeholder" id="videoPreview">
+                <div class="video-play-button" id="videoPlayBtn">
+                    <img src="assets/icons/youtube-logo-fill.svg" alt="Воспроизвести">
+                </div>
+                <div class="video-loading-spinner" id="videoSpinner"></div>
+                <iframe id="kinescope-player" src="" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;" frameborder="0" allowfullscreen style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Форма записи -->
+    <div class="popup-overlay" id="formModal" role="dialog" aria-modal="true">
+        <div class="popup-window">
+            <!-- Форма -->
+            <div class="popup-form-view" id="popupFormView">
+                <div class="popup-header">
+                    <button class="popup-close" id="formModalClose" aria-label="Закрыть">&times;</button>
+                    <div class="popup-badge">Заявка на&nbsp;аудит</div>
+                    <h2 class="popup-title">Оставьте заявку</h2>
+                    <p class="popup-subtitle" id="popupSubtitle">Заполните форму&nbsp;— и&nbsp;моя команда свяжется с&nbsp;вами в&nbsp;Телеграме в&nbsp;течение 24&nbsp;часов, чтобы согласовать дату и&nbsp;время аудита.</p>
+                </div>
+                <form class="popup-fields" id="auditForm" autocomplete="off">
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldName">Имя</label>
+                        <input class="popup-input" type="text" id="fieldName" name="name" placeholder="Как к вам обращаться" required autocomplete="off">
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldPhone">Телефон</label>
+                        <input class="popup-input" type="tel" id="fieldPhone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldRevenue">Месячный оборот</label>
+                        <input class="popup-input" type="text" id="fieldRevenue" name="revenue" placeholder="Например: 3 млн ₽" required autocomplete="off">
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldBusiness">Ниша / тип бизнеса</label>
+                        <input class="popup-input" type="text" id="fieldBusiness" name="business" placeholder="Например: стоматология, онлайн-школа" required autocomplete="off">
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldTelegram">Телеграм</label>
+                        <input class="popup-input" type="text" id="fieldTelegram" name="telegram" placeholder="@username" required autocomplete="off">
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldResult">Идеальный результат после аудита</label>
+                        <textarea class="popup-input popup-textarea" id="fieldResult" name="result" rows="3" placeholder="Что хотите получить в итоге?" required autocomplete="off"></textarea>
+                    </div>
+                    <div class="popup-promo-block" id="promoBlock">
+                        <p class="popup-promo-text" id="promoText">Цена аудита — 5&nbsp;000&nbsp;₽. Если у&nbsp;вас промокод, напишите его в&nbsp;поле ниже, и&nbsp;аудит для вас станет ещё дешевле.</p>
+                        <div class="popup-field popup-field-promo">
+                            <label class="popup-label" for="fieldPromo">Промокод</label>
+                            <div class="promo-apply-row">
+                                <input class="popup-input popup-input-promo" type="text" id="fieldPromo" name="promo" placeholder="Введите промокод" autocomplete="off">
+                                <button type="button" class="promo-apply-btn" id="promoApplyBtn">Применить</button>
+                            </div>
+                            <div class="promo-status" id="promoStatus"></div>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <button type="submit" class="popup-submit">Отправить заявку</button>
+                        <p class="popup-disclaimer">Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;политикой конфиденциальности</p>
+                    </div>
+                </form>
+            </div>
+            <!-- Экран успеха -->
+            <div class="popup-success-view" id="popupSuccessView" style="display: none;">
+                <button class="popup-close popup-success-x" id="popupSuccessClose" aria-label="Закрыть">&times;</button>
+                <div class="popup-success-inner">
+                    <div class="popup-success-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h3 class="popup-success-title">Заявка отправлена</h3>
+                    <div class="popup-success-quote">
+                        <img src="assets/images/ad_z.jpg" alt="Алексей Добрусин" class="popup-success-avatar">
+                        <p class="popup-success-text">Поздравляю! В&nbsp;течение 24&nbsp;часов мы&nbsp;с&nbsp;вами свяжемся. Моя помощница напишет вам в&nbsp;Телеграм.</p>
+                    </div>
+                    <div class="popup-success-tg">
+                        <p class="popup-success-tg-label">А&nbsp;пока подписывайтесь на&nbsp;мой Телеграм-канал и&nbsp;читайте последние посты</p>
+                        <div class="popup-success-qr">
+                            <img src="assets/images/qr-telegram.png" alt="QR-код Телеграм-канала" width="120" height="120">
+                        </div>
+                    </div>
+                    <a href="https://t.me/dobrusin_promarketing" class="btn-primary popup-success-cta" id="popupTgLink" target="_blank" rel="noopener">
+                        <img src="assets/icons/zap.svg" alt="" class="btn-icon btn-icon-white" width="20" height="20">
+                        <span>Перейти в&nbsp;канал</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="diagnostic.js"></script>
+</body>
+</html>

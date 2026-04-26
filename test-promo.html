@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест промокодов — Аудит</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* === Тестовая страница: отступ сверху чтобы видеть секцию === */
+        body {
+            background: #f5f5f7;
+            padding-top: 60px;
+        }
+
+        /* === Промо-бейдж на карточке цены === */
+        .promo-badge {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: #1a1a2e;
+            color: #c8f542;
+            border-radius: 12px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        .promo-badge.visible {
+            display: flex;
+        }
+
+        .promo-badge svg {
+            flex-shrink: 0;
+        }
+
+        /* === Новая цена при скидке === */
+        .final-dark-price.has-promo {
+            /* цена со скидкой — остаётся крупной */
+        }
+
+        .final-dark-old-price.promo-crossed {
+            /* 5 000 ₽ зачёркнутая вместо 15 000 ₽ */
+        }
+
+        /* === Кнопка «Применить» в форме === */
+        .promo-apply-row {
+            display: flex;
+            gap: 8px;
+            align-items: stretch;
+        }
+
+        .promo-apply-row .popup-input-promo {
+            flex: 1;
+        }
+
+        .promo-apply-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 12px;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        @media (hover: hover) {
+            .promo-apply-btn:hover {
+                background: #2a2a4e;
+            }
+        }
+
+        /* === Статус промокода в форме === */
+        .promo-status {
+            font-family: 'Manrope', sans-serif;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .promo-status.success {
+            display: block;
+            color: #1a8917;
+        }
+
+        .promo-status.error {
+            display: block;
+            color: #d32f2f;
+        }
+
+        /* === Тестовая инфо-плашка === */
+        .test-info {
+            max-width: 1320px;
+            margin: 0 auto 40px;
+            padding: 16px 60px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            color: rgba(26, 26, 46, 0.55);
+            line-height: 1.5;
+        }
+
+        .test-info code {
+            background: rgba(26, 26, 46, 0.06);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        /* === Промо текст в popup — зачёркнутая старая цена === */
+        .popup-promo-old-price {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .popup-promo-new-price {
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        @media (max-width: 768px) {
+            .test-info {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Тестовая плашка -->
+    <div class="test-info">
+        <strong>Тестовая страница промокодов.</strong><br>
+        Попробуй: <code>?promo=DOBRUSIN</code> или <code>?promo=5132</code> в URL.<br>
+        Также можно ввести промокод вручную в форме.
+    </div>
+
+    <!-- Section: Final CTA (копия с оригинала) -->
+    <section class="final-section" id="finalSection">
+        <h2 class="final-heading">Стоимость <span class="highlight-lime">аудита</span></h2>
+        <div class="final-container">
+            <div class="final-card final-card-light">
+                <div class="final-gift-icon">
+                    <img src="assets/icons/gift.svg" alt="" width="50" height="50">
+                </div>
+                <div class="final-bonus-list">
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Часовой аудит в&nbsp;Zoom</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Инженерная схема маркетинга</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">План действий на&nbsp;ближайший месяц</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Смета на&nbsp;3&nbsp;месяца</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Рекомендации по&nbsp;найму</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Авторские материалы</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Неделя поддержки от&nbsp;Алексея</p>
+                    </div>
+                    <div class="final-bonus-item">
+                        <span class="final-bonus-dot"></span>
+                        <p class="final-bonus-text">Видеозапись аудита</p>
+                    </div>
+                </div>
+            </div>
+            <div class="final-card final-card-dark">
+                <!-- Промо-бейдж (скрыт по умолчанию) -->
+                <div class="promo-badge" id="promoBadge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span id="promoBadgeText">Промокод применён</span>
+                </div>
+
+                <h2 class="final-dark-price" id="priceMain">5&nbsp;000&nbsp;₽</h2>
+                <p class="final-dark-old-price" id="priceOld"><s>15&nbsp;000&nbsp;₽</s></p>
+
+                <p class="final-card-text" id="priceDescription">Благодаря инженерному подходу мне удалось структурировать аудит так, что за&nbsp;1&nbsp;час вы&nbsp;получаете материалы, сравнимые по&nbsp;ценности с&nbsp;3-часовой стратегической сессией. Такая сессия у&nbsp;меня стоит 15&nbsp;000&nbsp;₽. Но&nbsp;я&nbsp;намеренно ставлю цену ниже стоимости своего часа. Хочу, чтобы цена не&nbsp;стала барьером. Чтобы вы&nbsp;легко сказали «да» и&nbsp;познакомились с&nbsp;подходом. <span style="font-weight: 600; color: #1a1a2e;">Поэтому стоимость аудита&nbsp;— 5&nbsp;000&nbsp;₽.</span> Если у&nbsp;вас есть промокод, введите его при заполнении формы, и&nbsp;стоимость станет ещё ниже.</p>
+                <a href="#" class="btn-primary final-cta" id="openFormBtn">
+                    <img src="assets/icons/zap.svg" alt="" class="btn-icon btn-icon-white" width="22" height="22">
+                    <span>Записаться на аудит</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal: Форма записи (копия с оригинала) -->
+    <div class="popup-overlay" id="formModal" role="dialog" aria-modal="true">
+        <div class="popup-window">
+            <!-- Форма -->
+            <div class="popup-form-view" id="popupFormView">
+                <div class="popup-header">
+                    <button class="popup-close" id="formModalClose" aria-label="Закрыть">&times;</button>
+                    <div class="popup-badge">Заявка на&nbsp;аудит</div>
+                    <h2 class="popup-title">Оставьте заявку</h2>
+                    <p class="popup-subtitle" id="popupSubtitle">Заполните форму&nbsp;— и&nbsp;моя команда свяжется с&nbsp;вами в&nbsp;Телеграме в&nbsp;течение 24&nbsp;часов, чтобы согласовать дату и&nbsp;время аудита.</p>
+                </div>
+                <form class="popup-fields" id="auditForm">
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldName">Имя</label>
+                        <input class="popup-input" type="text" id="fieldName" name="name" placeholder="Как к вам обращаться" required>
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldPhone">Телефон</label>
+                        <input class="popup-input" type="tel" id="fieldPhone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldRevenue">Месячный оборот</label>
+                        <input class="popup-input" type="text" id="fieldRevenue" name="revenue" placeholder="Например: 3 млн ₽" required>
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldBusiness">Ниша / тип бизнеса</label>
+                        <input class="popup-input" type="text" id="fieldBusiness" name="business" placeholder="Например: стоматология, онлайн-школа" required>
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldTelegram">Телеграм</label>
+                        <input class="popup-input" type="text" id="fieldTelegram" name="telegram" placeholder="@username" required>
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label" for="fieldResult">Идеальный результат после аудита</label>
+                        <textarea class="popup-input popup-textarea" id="fieldResult" name="result" rows="3" placeholder="Что хотите получить в итоге?" required></textarea>
+                    </div>
+                    <div class="popup-promo-block" id="promoBlock">
+                        <p class="popup-promo-text" id="promoText">Цена аудита — 5&nbsp;000&nbsp;₽. Если у&nbsp;вас промокод, напишите его в&nbsp;поле ниже, и&nbsp;аудит для вас станет ещё дешевле.</p>
+                        <div class="popup-field popup-field-promo">
+                            <label class="popup-label" for="fieldPromo">Промокод</label>
+                            <div class="promo-apply-row">
+                                <input class="popup-input popup-input-promo" type="text" id="fieldPromo" name="promo" placeholder="Введите промокод" autocomplete="off">
+                                <button type="button" class="promo-apply-btn" id="promoApplyBtn">Применить</button>
+                            </div>
+                            <div class="promo-status" id="promoStatus"></div>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <button type="submit" class="popup-submit">Отправить заявку</button>
+                        <p class="popup-disclaimer">Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;политикой конфиденциальности</p>
+                    </div>
+                </form>
+            </div>
+            <!-- Экран успеха -->
+            <div class="popup-success-view" id="popupSuccessView" style="display: none;">
+                <button class="popup-close popup-success-x" id="popupSuccessClose" aria-label="Закрыть">&times;</button>
+                <div class="popup-success-inner">
+                    <div class="popup-success-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h3 class="popup-success-title">Заявка отправлена</h3>
+                    <div class="popup-success-quote">
+                        <img src="assets/images/ad_z.jpg" alt="Алексей Добрусин" class="popup-success-avatar">
+                        <p class="popup-success-text">Поздравляю! В&nbsp;течение 24&nbsp;часов мы&nbsp;с&nbsp;вами свяжемся. Моя помощница напишет вам в&nbsp;Телеграм.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    /* ============================================
+       ПРОМОКОДЫ — логика
+       ============================================ */
+    (function() {
+        // --- Словарь промокодов ---
+        var PROMOKODES = {
+            'DOBRUSIN': { newPrice: 2000 },
+            '5132':     { newPrice: 2000 }
+        };
+
+        var BASE_PRICE = 5000;
+        var activePromo = null;
+
+        // --- DOM-элементы ---
+        var priceMain = document.getElementById('priceMain');
+        var priceOld = document.getElementById('priceOld');
+        var promoBadge = document.getElementById('promoBadge');
+        var promoBadgeText = document.getElementById('promoBadgeText');
+        var priceDescription = document.getElementById('priceDescription');
+        var promoInput = document.getElementById('fieldPromo');
+        var promoApplyBtn = document.getElementById('promoApplyBtn');
+        var promoStatus = document.getElementById('promoStatus');
+        var promoText = document.getElementById('promoText');
+        var popupSubtitle = document.getElementById('popupSubtitle');
+
+        // --- Форматирование цены ---
+        function formatPrice(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0') + '\u00A0₽';
+        }
+
+        // --- Применить промокод ---
+        function applyPromo(code) {
+            var normalized = code.trim().toUpperCase();
+            var promoData = PROMOKODES[normalized];
+
+            if (!promoData) {
+                // Невалидный промокод
+                promoStatus.textContent = 'Промокод не найден';
+                promoStatus.className = 'promo-status error';
+                return false;
+            }
+
+            activePromo = normalized;
+            var newPrice = promoData.newPrice;
+
+            // Обновляем карточку цены (15 000 ₽ зачёркнутая остаётся)
+            priceMain.innerHTML = formatPrice(newPrice);
+            // priceOld остаётся 15 000 ₽ — не меняем
+
+            // Показываем бейдж
+            promoBadgeText.textContent = 'Промокод ' + normalized + ' применён';
+            promoBadge.classList.add('visible');
+
+            // Обновляем описание на карточке
+            priceDescription.innerHTML = 'Благодаря инженерному подходу мне удалось структурировать аудит так, что за\u00A01\u00A0час вы\u00A0получаете материалы, сравнимые по\u00A0ценности с\u00A03-часовой стратегической сессией. Такая сессия у\u00A0меня стоит 15\u00A0000\u00A0₽. Но\u00A0я\u00A0намеренно ставлю цену ниже стоимости своего часа. Хочу, чтобы цена не\u00A0стала барьером. Чтобы вы\u00A0легко сказали «да» и\u00A0познакомились с\u00A0подходом. <span style="font-weight: 600; color: #1a1a2e;">По\u00A0вашему промокоду стоимость аудита\u00A0— ' + formatPrice(newPrice) + ' вместо\u00A015\u00A0000\u00A0₽.</span>';
+
+            // Обновляем текст в промо-блоке формы
+            promoText.innerHTML = '<span style="color: #1a8917; font-weight: 600;">Промокод ' + normalized + ' применён!</span> Цена аудита\u00A0— <span class="popup-promo-new-price">' + formatPrice(newPrice) + '</span> вместо\u00A0<span class="popup-promo-old-price">15\u00A0000\u00A0₽</span>';
+
+            // Обновляем подзаголовок формы
+            popupSubtitle.innerHTML = 'Заполните форму\u00A0— и\u00A0моя команда свяжется с\u00A0вами в\u00A0Телеграме в\u00A0течение 24\u00A0часов, чтобы согласовать дату и\u00A0время аудита.';
+
+            // Статус в форме
+            promoStatus.textContent = 'Промокод ' + normalized + ' применён — скидка ' + formatPrice(15000 - newPrice);
+            promoStatus.className = 'promo-status success';
+
+            // Заполняем поле
+            promoInput.value = normalized;
+            promoInput.readOnly = true;
+            promoApplyBtn.textContent = 'Применён';
+            promoApplyBtn.disabled = true;
+            promoApplyBtn.style.background = '#1a8917';
+
+            return true;
+        }
+
+        // --- Кнопка «Применить» ---
+        promoApplyBtn.addEventListener('click', function() {
+            var code = promoInput.value;
+            if (code.trim()) {
+                applyPromo(code);
+            }
+        });
+
+        // --- Enter в поле промокода ---
+        promoInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                var code = promoInput.value;
+                if (code.trim()) {
+                    applyPromo(code);
+                }
+            }
+        });
+
+        // --- Чтение промокода из URL ---
+        var urlParams = new URLSearchParams(window.location.search);
+        var urlPromo = urlParams.get('promo');
+        if (urlPromo) {
+            applyPromo(urlPromo);
+        }
+
+        // --- Popup open/close (упрощённая копия) ---
+        var modal = document.getElementById('formModal');
+        var openBtn = document.getElementById('openFormBtn');
+        var closeBtn = document.getElementById('formModalClose');
+        var successCloseBtn = document.getElementById('popupSuccessClose');
+        var formView = document.getElementById('popupFormView');
+        var successView = document.getElementById('popupSuccessView');
+        var scrollY = 0;
+
+        function lockBody() {
+            scrollY = window.pageYOffset;
+            document.body.style.position = 'fixed';
+            document.body.style.top = '-' + scrollY + 'px';
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function unlockBody() {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.overflow = '';
+            document.documentElement.style.scrollBehavior = 'auto';
+            window.scrollTo(0, scrollY);
+            requestAnimationFrame(function() {
+                document.documentElement.style.scrollBehavior = '';
+            });
+        }
+
+        // Label focus states
+        modal.querySelectorAll('.popup-field').forEach(function(field) {
+            var input = field.querySelector('.popup-input');
+            if (!input) return;
+            input.addEventListener('focus', function() { field.classList.add('focused'); });
+            input.addEventListener('blur', function() { field.classList.remove('focused'); });
+        });
+
+        openBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            formView.style.display = '';
+            successView.style.display = 'none';
+            modal.classList.remove('success-mode');
+            modal.classList.add('active');
+            lockBody();
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            unlockBody();
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                unlockBody();
+            }
+        });
+
+        if (successCloseBtn) {
+            successCloseBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+                unlockBody();
+            });
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                unlockBody();
+            }
+        });
+
+        // Form submit — для теста просто показываем успех
+        var form = document.getElementById('auditForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formView.style.display = 'none';
+            successView.style.display = '';
+            modal.classList.add('success-mode');
+        });
+    })();
+    </script>
+</body>
+</html>
